@@ -1,0 +1,18 @@
+# Configuración con credenciales reales (usar config.example.js como plantilla)
+config.js
+site/crm/config.js
+.dev.vars
+.env
+.env.*
+
+# Dependencias y build
+node_modules/
+dist/
+.wrangler/
+
+# Sistema operativo / editores
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

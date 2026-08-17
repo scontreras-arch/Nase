@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-00dbfd63-17c7-41f6-b87d-8923c1a1a5cc/styles.css">
+<script src="_ds/industry-00dbfd63-17c7-41f6-b87d-8923c1a1a5cc/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); text-wrap: pretty; }
+a { color: var(--color-accent-700); }
+a:hover { color: var(--color-accent-800); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes dashMove { to { stroke-dashoffset: -240; } }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; } }
+</style>
+</helmet>
+
+<nav class="nav" style="position: sticky; top: 0; z-index: 50; background: var(--color-bg); flex-wrap: wrap;">
+  <span class="nav-brand" style="display: inline-flex; align-items: center; gap: 10px;">
+    <img src="assets/logo-nase.png" alt="NASE Agrotech" style="height: 30px; display: block;">
+  </span>
+  <a href="#t100">T100</a>
+  <a href="#enterprise">Enterprise</a>
+  <a href="#modelos">Modelos</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#contacto">Contacto</a>
+  <a href="#contacto" class="btn btn-primary" style="text-decoration: none; color: var(--color-bg); background: #1e6b43; border-color: #1e6b43;" style-hover="background: #2e9159;">Cotizar</a>
+</nav>
+
+<section style="position: relative; overflow: hidden; background: var(--color-accent-900); min-height: clamp(560px, 92vh, 960px); display: flex; align-items: center;">
+  <div style="position: absolute; inset: 0; overflow: hidden; pointer-events: none;" aria-hidden="true">
+    <video src="https://www-cdn.djiits.com/reactor/assets/_next/static/videos/51806b53-62b4-48e2-9f56-eef3c2d29840.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" aria-label="DJI Agras operando sobre un campo" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
+    <div style="position: absolute; inset: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--color-accent-900) 94%, transparent) 0%, color-mix(in srgb, var(--color-accent-900) 62%, transparent) 55%, color-mix(in srgb, var(--color-accent-900) 22%, transparent) 100%);"></div>
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="none" fill="none" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.35;">
+      <path d="M -20 520 C 260 420, 420 560, 640 430 S 1020 250, 1230 300" stroke="#8bc34a" stroke-width="1.5" stroke-dasharray="10 14" style="animation: dashMove 7s linear infinite;"></path>
+    </svg>
+  </div>
+  <div style="position: relative; z-index: 1; width: 100%; max-width: 1160px; margin: 0 auto; padding: clamp(64px, 10vh, 120px) clamp(20px, 5vw, 72px);">
+    <img src="assets/logo-nase-blanco.png" alt="NASE Agrotech" style="display: block; height: clamp(80px, 11vw, 148px); width: auto; margin: 0 0 28px -6px; filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.55)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)); animation: fadeUp 0.6s ease both;">
+    <span style="display: block; font-size: 13px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #9ccc65; margin-bottom: 12px; animation: fadeUp 0.6s ease 0.05s both;">Distribución e integración · DJI Agras</span>
+    <hr style="height: 1px; border: 0; margin: 0 0 20px; background: color-mix(in srgb, var(--color-bg) 28%, transparent); max-width: 620px;">
+    <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(52px, 7.5vw, 104px); line-height: 1.04; letter-spacing: 0.01em; text-transform: uppercase; color: var(--color-bg); margin: 0 0 0 -0.052em; animation: fadeUp 0.7s ease 0.1s both;">
+      <span style="display: block;">Precisión aérea</span>
+      <span style="display: block;">para tu campo.</span>
+    </h1>
+    <p style="font-size: clamp(16px, 1.4vw, 18px); line-height: 1.5; max-width: 52ch; margin: 24px 0 0; color: color-mix(in srgb, var(--color-bg) 88%, transparent); animation: fadeUp 0.7s ease 0.2s both;">Llevamos los drones DJI Agras a los huertos, viñas y maizales del Maule. Más cobertura, menos agua, sin compactar el suelo.</p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; animation: fadeUp 0.7s ease 0.3s both;">
+      <a href="#contacto" class="btn btn-primary" style="text-decoration: none; white-space: nowrap; color: var(--color-bg); background: #1e6b43; border-color: #1e6b43;" style-hover="background: #2e9159;">Solicitar cotización</a>
+      <a href="#modelos" class="btn" style="text-decoration: none; white-space: nowrap; color: var(--color-bg); border-color: color-mix(in srgb, var(--color-bg) 45%, transparent);" style-hover="background: color-mix(in srgb, var(--color-bg) 14%, transparent);">Ver modelos Agras</a>
+    </div>
+    <p style="font-size: 13px; letter-spacing: 0.06em; font-weight: 600; text-transform: uppercase; color: color-mix(in srgb, var(--color-bg) 68%, transparent); margin: 32px 0 0; animation: fadeUp 0.7s ease 0.4s both;">+500 drones operando en Chile · RTK ±10 cm · Gama T25P a T100 · Video oficial DJI</p>
+  </div>
+</section>
+
+<div style="max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px);">
+
+  <section id="t55" style="padding: clamp(40px, 5vw, 72px) 0 clamp(8px, 1vw, 16px);">
+    <span style="display: block; font-size: 13px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #1e6b43; margin-bottom: 12px;">01 · Estreno — El nuevo DJI Agras T55</span>
+    <hr style="height: 1px; border: 0; margin: 0 0 32px; background: var(--color-divider);">
+    <div style="display: flex; flex-wrap: wrap; gap: clamp(24px, 3vw, 48px); align-items: center;">
+      <figure class="blueprint" style="flex: 1 1 520px; margin: 0; position: relative;">
+        <iframe src="https://drive.google.com/file/d/1RXPSrCU-7zl4oRy3-UPmJ1UuwceY6btd/preview" title="DJI Agras T55 — presentación oficial en español" allow="autoplay; fullscreen" allowfullscreen="{{ true }}" style="display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #0e1a14;"></iframe>
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      </figure>
+      <div style="flex: 1 1 300px;">
+        <h2 style="font-size: clamp(28px, 3vw, 40px); letter-spacing: 0.02em; text-transform: uppercase; margin: 0;">50 litros. Una persona. Todo el campo.</h2>
+        <p style="font-size: 15px; line-height: 1.5; max-width: 52ch; margin: 14px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">El sucesor del T50 llegó a Chile: pulverización de 50 L con caudal de 40 L/min, esparcido de 55 kg, izaje de 40 kg y carga rápida en 9 minutos. Plegable, con visión nocturna y radares de arreglo en fase.</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px;">
+          <span class="tag" style="color: #1e6b43; border: 1px solid color-mix(in srgb, #1e6b43 45%, transparent); background: transparent;">50 L pulverización</span>
+          <span class="tag" style="color: #1e6b43; border: 1px solid color-mix(in srgb, #1e6b43 45%, transparent); background: transparent;">40 L/min</span>
+          <span class="tag" style="color: #1e6b43; border: 1px solid color-mix(in srgb, #1e6b43 45%, transparent); background: transparent;">Izaje 40 kg</span>
+          <span class="tag" style="color: #1e6b43; border: 1px solid color-mix(in srgb, #1e6b43 45%, transparent); background: transparent;">Carga en 9 min</span>
+        </div>
+        <div style="margin-top: 24px;">
+          <a href="#contacto" class="btn btn-primary" style="text-decoration: none; white-space: nowrap; color: var(--color-bg); background: #1e6b43; border-color: #1e6b43;" style-hover="background: #2e9159;" onClick="{{ quoteT55 }}">Cotizar el T55</a>
+        </div>
+        <p style="font-size: 13px; margin: 16px 0 0; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Presentación oficial en español · material del distribuidor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="t100" style="position: relative; overflow: hidden; background: #0e1a14; margin: clamp(32px, 4vw, 56px) calc(50% - 50vw);">
+    <div aria-hidden="true" style="position: absolute; inset: 0;">
+        <video src="https://www-cdn.djiits.com/reactor/assets/_next/static/videos/45c104ea-dd50-4b8f-96d1-f558804ff23b.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 26, 20, 0.92) 0%, rgba(14, 26, 20, 0.86) 100%);"></div>
+    </div>
+    <div style="position: relative; max-width: 1160px; margin: 0 auto; padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 72px);">
+    <div class="blueprint" style="position: relative; border-color: color-mix(in srgb, var(--color-bg) 30%, transparent);">
+      <i class="corner tl" style="color: color-mix(in srgb, var(--color-bg) 60%, transparent);"></i><i class="corner tr" style="color: color-mix(in srgb, var(--color-bg) 60%, transparent);"></i><i class="corner bl" style="color: color-mix(in srgb, var(--color-bg) 60%, transparent);"></i><i class="corner br" style="color: color-mix(in srgb, var(--color-bg) 60%, transparent);"></i>
+      <header style="position: relative; display: flex; flex-wrap: wrap; align-items: stretch; color: var(--color-bg); border-bottom: 1px solid color-mix(in srgb, var(--color-bg) 24%, transparent);">
+        <span style="flex: 1; min-width: 16ch; padding: 14px 24px; font-size: 13px; line-height: 1.6; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;">DJI Agras T100 — datos verificados</span>
+        <span style="border-left: 1px solid color-mix(in srgb, var(--color-bg) 25%, transparent); padding: 14px 24px; font-size: 13px; line-height: 1.6; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; white-space: nowrap; color: color-mix(in srgb, var(--color-bg) 82%, transparent);">T100</span>
+        <span style="border-left: 1px solid color-mix(in srgb, var(--color-bg) 25%, transparent); padding: 14px 24px; font-size: 13px; line-height: 1.6; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; white-space: nowrap; color: color-mix(in srgb, var(--color-bg) 82%, transparent);">Hoja 01</span>
+      </header>
+      <div style="position: relative; display: flex; flex-wrap: wrap;">
+        <sc-for list="{{ t100Specs }}" as="s" hint-placeholder-count="8">
+          <div style="flex: 1 1 250px; text-align: center; padding: 26px 20px; border-right: 1px solid color-mix(in srgb, var(--color-bg) 16%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--color-bg) 16%, transparent);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8bc34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 26px; height: 26px; display: block; margin: 0 auto 10px;"><path d="{{ s.icon }}"></path></svg>
+            <span style="display: inline-block; padding: 3px 10px; background: #8bc34a; color: #0e1a14; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; font-feature-settings: 'tnum' 1;">{{ s.num }}</span>
+            <span style="display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 36px; line-height: 1.1; letter-spacing: 0.02em; margin-top: 10px; white-space: nowrap; color: var(--color-bg); font-feature-settings: 'tnum' 1;">{{ s.val }}</span>
+            <span style="display: block; font-size: 13px; line-height: 1.45; margin-top: 6px; color: color-mix(in srgb, var(--color-bg) 72%, transparent);">{{ s.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p style="position: relative; margin: 0; padding: 12px 24px; font-size: 13px; line-height: 1.6; color: color-mix(in srgb, var(--color-bg) 65%, transparent); border-top: 1px solid color-mix(in srgb, var(--color-bg) 24%, transparent);">Fuente oficial: ag.dji.com/t100/specs · Safety System 3.0 (LiDAR + radar mmwave + Penta-Vision).</p>
+    </div>
+    </div>
+  </section>
+
+  <section style="margin: clamp(24px, 3vw, 40px) calc(50% - 50vw);">
+    <div style="position: relative; overflow: hidden; color: var(--color-bg); background: var(--color-accent-900);">
+      <img src="https://www-cdn.djiits.com/cms/uploads/5dd884071bff3f03efba47898e73acf1.jpg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+      <div aria-hidden="true" style="position: absolute; inset: 0; background: color-mix(in srgb, #13241a 86%, transparent);"></div>
+      <div style="position: relative; display: flex; flex-wrap: wrap; max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px);">
+      <div style="flex: 1 1 220px; text-align: center; padding: clamp(24px, 3vw, 36px); border-right: 1px solid color-mix(in srgb, var(--color-bg) 20%, transparent);">
+        <span style="display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(36px, 3.5vw, 52px); line-height: 1; letter-spacing: 0.01em;">500.000</span>
+        <span style="display: block; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; margin-top: 10px; color: color-mix(in srgb, var(--color-bg) 75%, transparent);">Drones DJI Agriculture en el mundo</span>
+      </div>
+      <div style="flex: 1 1 220px; text-align: center; padding: clamp(24px, 3vw, 36px); border-right: 1px solid color-mix(in srgb, var(--color-bg) 20%, transparent);">
+        <span style="display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(36px, 3.5vw, 52px); line-height: 1; letter-spacing: 0.01em;">300</span>
+        <span style="display: block; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; margin-top: 10px; color: color-mix(in srgb, var(--color-bg) 75%, transparent);">Tipos de cultivo tratados</span>
+      </div>
+      <div style="flex: 1 1 220px; text-align: center; padding: clamp(24px, 3vw, 36px); border-right: 1px solid color-mix(in srgb, var(--color-bg) 20%, transparent);">
+        <span style="display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(36px, 3.5vw, 52px); line-height: 1; letter-spacing: 0.01em;">100</span>
+        <span style="display: block; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; margin-top: 10px; color: color-mix(in srgb, var(--color-bg) 75%, transparent);">Países con operación Agras</span>
+      </div>
+      <div style="flex: 1 1 220px; text-align: center; padding: clamp(24px, 3vw, 36px);">
+        <span style="display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(36px, 3.5vw, 52px); line-height: 1; letter-spacing: 0.01em;">+500</span>
+        <span style="display: block; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; margin-top: 10px; color: color-mix(in srgb, var(--color-bg) 75%, transparent);">Drones pulverizando en Chile</span>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: clamp(40px, 5vw, 72px) 0;">
+    <span style="display: block; font-size: 13px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #1e6b43; margin-bottom: 12px;">02 · El terreno manda. El dron se adapta.</span>
+    <hr style="height: 1px; border: 0; margin: 0 0 32px; background: var(--color-divider);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: clamp(24px, 3vw, 40px);">
+      <div class="blueprint" style="padding: 24px;">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1e6b43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 26px; height: 26px; display: block; margin-bottom: 14px;"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"></path></svg>
+        <span style="display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(44px, 4vw, 60px); line-height: 1; letter-spacing: 0.01em; color: #1e6b43; font-feature-settings: 'tnum' 1;">90%</span>
+        <h3 style="font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase; margin: 12px 0 0;">Menos agua</h3>
+        <p style="font-size: 15px; line-height: 1.5; margin: 8px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">60–80 L/ha frente a los 400–1.000 L/ha del método tradicional.</p>
+      </div>
+      <div class="blueprint" style="padding: 24px;">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1e6b43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 26px; height: 26px; display: block; margin-bottom: 14px;"><path d="M10 2h4M12 14l3-3M4 14a8 8 0 1 0 16 0a8 8 0 1 0-16 0"></path></svg>
+        <span style="display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(44px, 4vw, 60px); line-height: 1; letter-spacing: 0.01em; color: #1e6b43; font-feature-settings: 'tnum' 1;">12 ha/h</span>
+        <h3 style="font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase; margin: 12px 0 0;">Cobertura real</h3>
+        <p style="font-size: 15px; line-height: 1.5; margin: 8px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Caudal de 30–40 L/min y vuelo RTK uniforme, pasada tras pasada.</p>
+      </div>
+      <div class="blueprint" style="padding: 24px;">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1e6b43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 26px; height: 26px; display: block; margin-bottom: 14px;"><path d="m8 3 4 8 5-5 5 15H2L8 3z"></path></svg>
+        <span style="display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(44px, 4vw, 60px); line-height: 1; letter-spacing: 0.01em; color: #1e6b43; font-feature-settings: 'tnum' 1;">0</span>
+        <h3 style="font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase; margin: 12px 0 0;">Compactación de suelo</h3>
+        <p style="font-size: 15px; line-height: 1.5; margin: 8px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Aplica desde el aire, incluso después de la lluvia — sin pisar el barro ni la fruta.</p>
+      </div>
+      <div class="blueprint" style="padding: 24px;">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1e6b43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 26px; height: 26px; display: block; margin-bottom: 14px;"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM9 14l2 2 4-4"></path></svg>
+        <span style="display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(44px, 4vw, 60px); line-height: 1; letter-spacing: 0.01em; color: #1e6b43; font-feature-settings: 'tnum' 1;">100%</span>
+        <h3 style="font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase; margin: 12px 0 0;">Aplicaciones registradas</h3>
+        <p style="font-size: 15px; line-height: 1.5; margin: 8px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Prescripción variable y registro georreferenciado de cada aplicación.</p>
+      </div>
+    </div>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 28px;">
+      <span class="tag" style="color: #1e6b43; border: 1px solid color-mix(in srgb, #1e6b43 45%, transparent); background: transparent;">Cerezos</span>
+      <span class="tag" style="color: #1e6b43; border: 1px solid color-mix(in srgb, #1e6b43 45%, transparent); background: transparent;">Manzanos</span>
+      <span class="tag" style="color: #1e6b43; border: 1px solid color-mix(in srgb, #1e6b43 45%, transparent); background: transparent;">Viñas</span>
+      <span class="tag" style="color: #1e6b43; border: 1px solid color-mix(in srgb, #1e6b43 45%, transparent); background: transparent;">Maíz</span>
+      <span class="tag" style="color: #1e6b43; border: 1px solid color-mix(in srgb, #1e6b43 45%, transparent); background: transparent;">Arándanos</span>
+      <span class="tag" style="color: #1e6b43; border: 1px solid color-mix(in srgb, #1e6b43 45%, transparent); background: transparent;">Praderas</span>
+    </div>
+  </section>
+
+  <section style="padding: clamp(32px, 4vw, 56px) 0;">
+    <span style="display: block; font-size: 13px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #1e6b43; margin-bottom: 12px;">03 · Cómo funciona</span>
+    <hr style="height: 1px; border: 0; margin: 0 0 32px; background: var(--color-divider);">
+    <div class="blueprint" style="position: relative; padding: clamp(28px, 4vw, 48px); background-image: repeating-linear-gradient(0deg, color-mix(in srgb, var(--color-text) 7%, transparent) 0 1px, transparent 1px 48px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--color-text) 7%, transparent) 0 1px, transparent 1px 48px);">
+    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+    <div style="display: flex; flex-wrap: wrap; gap: clamp(24px, 3vw, 40px);">
+      <div style="flex: 1 1 260px;">
+        <figure class="blueprint" style="margin: 0 0 16px; position: relative;">
+          <video src="https://www-cdn.djiits.com/reactor/assets/_next/static/videos/359ebc97-ca1f-46eb-b03b-5308ba4cad07.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #0e1a14;"></video>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </figure>
+        <span style="display: inline-block; padding: 3px 10px; background: #8bc34a; color: #0e1a14; font-size: 11px; font-weight: 600; letter-spacing: 0.1em;">PASO 01</span>
+        <h3 style="font-size: 22px; letter-spacing: 0.02em; text-transform: uppercase; margin: 10px 0 0;">Mapeo</h3>
+        <p style="font-size: 15px; line-height: 1.5; margin: 8px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Levantamos el campo con dron de mapeo multiespectral y detectamos zonas de estrés.</p>
+      </div>
+      <div style="flex: 1 1 260px;">
+        <figure class="blueprint" style="margin: 0 0 16px; position: relative;">
+          <video src="https://www-cdn.djiits.com/reactor/assets/_next/static/videos/f352bfc6-b659-4b68-95bb-a76d00fa87a7.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #0e1a14;"></video>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </figure>
+        <span style="display: inline-block; padding: 3px 10px; background: #8bc34a; color: #0e1a14; font-size: 11px; font-weight: 600; letter-spacing: 0.1em;">PASO 02</span>
+        <h3 style="font-size: 22px; letter-spacing: 0.02em; text-transform: uppercase; margin: 10px 0 0;">Prescripción variable</h3>
+        <p style="font-size: 15px; line-height: 1.5; margin: 8px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Cada zona recibe la dosis que necesita — ni más producto, ni menos.</p>
+      </div>
+      <div style="flex: 1 1 260px;">
+        <figure class="blueprint" style="margin: 0 0 16px; position: relative;">
+          <video src="https://www-cdn.djiits.com/reactor/assets/_next/static/videos/8cdbaa0d-7e59-4acb-bb00-a0e17c4d4edf.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #0e1a14;"></video>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </figure>
+        <span style="display: inline-block; padding: 3px 10px; background: #8bc34a; color: #0e1a14; font-size: 11px; font-weight: 600; letter-spacing: 0.1em;">PASO 03</span>
+        <h3 style="font-size: 22px; letter-spacing: 0.02em; text-transform: uppercase; margin: 10px 0 0;">Aplicación</h3>
+        <p style="font-size: 15px; line-height: 1.5; margin: 8px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">El Agras ejecuta la prescripción con vuelo RTK de ±10 cm y registro completo.</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="modelos" style="padding: clamp(40px, 5vw, 72px) 0;">
+    <span style="display: block; font-size: 13px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #1e6b43; margin-bottom: 12px;">04 · Modelos DJI Agras</span>
+    <hr style="height: 1px; border: 0; margin: 0 0 24px; background: var(--color-divider);">
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+        <button type="button" class="{{ t.cls }}" style="{{ t.style }}" onClick="{{ t.select }}">{{ t.name }}</button>
+      </sc-for>
+    </div>
+    <div class="blueprint" style="margin-top: 28px; padding: clamp(24px, 3vw, 40px); position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px; align-items: start;">
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div>
+      <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;">
+        <h3 style="font-size: 32px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0;">{{ model.nombre }}</h3>
+        <sc-if value="{{ model.estrella }}" hint-placeholder-val="{{ false }}"><span class="tag" style="background: #8bc34a; color: #0e1a14; border-color: transparent;">Tope de línea</span></sc-if>
+      </div>
+      <p style="font-size: 15px; line-height: 1.5; max-width: 60ch; margin: 12px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">{{ model.perfil }}</p>
+      <div style="display: flex; flex-wrap: wrap; border-top: 1px solid color-mix(in srgb, var(--color-text) 22%, transparent); border-left: 1px solid color-mix(in srgb, var(--color-text) 22%, transparent); margin-top: 24px;">
+        <sc-for list="{{ model.specs }}" as="s" hint-placeholder-count="4">
+          <div style="flex: 1 1 180px; text-align: center; padding: 18px 16px; border-right: 1px solid color-mix(in srgb, var(--color-text) 22%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--color-text) 22%, transparent);">
+            <span style="display: block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--color-accent-700);">{{ s.k }}</span>
+            <span style="display: block; font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 28px; line-height: 1.1; letter-spacing: 0.02em; margin-top: 6px; font-feature-settings: 'tnum' 1;">{{ s.v }}</span>
+            <span style="display: block; font-size: 12px; line-height: 1.4; margin-top: 3px; color: color-mix(in srgb, var(--color-text) 62%, transparent);">{{ s.sub }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top: 24px;">
+        <a href="#contacto" class="btn btn-primary" style="text-decoration: none; white-space: nowrap; color: var(--color-bg); background: #1e6b43; border-color: #1e6b43;" style-hover="background: #2e9159;" onClick="{{ model.quote }}">Cotizar {{ model.corto }}</a>
+      </div>
+      </div>
+      <sc-if value="{{ isT55 }}" hint-placeholder-val="{{ false }}">
+        <figure class="blueprint" style="margin: 0; align-self: stretch;">
+          <iframe src="https://drive.google.com/file/d/1RXPSrCU-7zl4oRy3-UPmJ1UuwceY6btd/preview" title="DJI Agras T55 — presentación oficial" allow="autoplay; fullscreen" allowfullscreen="{{ true }}" style="display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #0e1a14;"></iframe>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </figure>
+      </sc-if>
+      <sc-if value="{{ hasModelImg }}" hint-placeholder-val="{{ false }}">
+        <figure class="blueprint" style="margin: 0; align-self: stretch; height: 100%;">
+          <img src="{{ model.img }}" alt="{{ model.nombre }}" style="width: 100%; height: 100%; min-height: 260px; object-fit: cover; display: block;">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </figure>
+      </sc-if>
+    </div>
+    <p style="font-size: 13px; margin: 16px 0 0; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Datos oficiales DJI Agriculture medidos en condiciones controladas. La ficha técnica completa acompaña cada cotización.</p>
+  </section>
+
+  <section id="servicios" style="position: relative; overflow: hidden; background: #13241a; margin: clamp(32px, 4vw, 56px) calc(50% - 50vw);">
+    <div aria-hidden="true" style="position: absolute; inset: 0;">
+      <video src="https://www-cdn.djiits.com/reactor/assets/_next/static/videos/1d4c248b-df78-4fa5-a3d1-54debc3d7821.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 26, 20, 0.94) 0%, rgba(14, 26, 20, 0.88) 100%);"></div>
+    </div>
+    <div style="position: relative; max-width: 1160px; margin: 0 auto; padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 72px); color: var(--color-bg);">
+      <span style="display: block; font-size: 13px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #8bc34a; margin-bottom: 12px;">05 · Servicios NASE</span>
+      <hr style="height: 1px; border: 0; margin: 0 0 20px; background: color-mix(in srgb, var(--color-bg) 24%, transparent);">
+      <h2 style="font-size: clamp(28px, 3.2vw, 42px); letter-spacing: 0.02em; text-transform: uppercase; margin: 0 0 36px;">No vendemos drones. Integramos operaciones.</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: clamp(20px, 2.5vw, 32px);">
+        <div class="blueprint" style="flex: 1 1 240px; padding: 24px; border-color: color-mix(in srgb, var(--color-bg) 30%, transparent); background: rgba(244, 244, 245, 0.05); backdrop-filter: blur(2px);">
+          <i class="corner tl" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner tr" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner bl" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner br" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8bc34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 28px; height: 28px; display: block; margin-bottom: 14px;"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM3.3 7l8.7 5 8.7-5M12 22V12"></path></svg>
+          <h3 style="font-size: 22px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0;">Venta e integración</h3>
+          <p style="font-size: 15px; line-height: 1.5; margin: 12px 0 0; color: color-mix(in srgb, var(--color-bg) 75%, transparent);">Equipo, baterías y generador con puesta en marcha en tu campo. Entrega y configuración incluidas.</p>
+        </div>
+        <div class="blueprint" style="flex: 1 1 240px; padding: 24px; border-color: color-mix(in srgb, var(--color-bg) 30%, transparent); background: rgba(244, 244, 245, 0.05); backdrop-filter: blur(2px);">
+          <i class="corner tl" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner tr" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner bl" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner br" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8bc34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 28px; height: 28px; display: block; margin-bottom: 14px;"><path d="M21.42 10.92a1 1 0 0 0 0-1.84l-8.6-3.91a2 2 0 0 0-1.66 0l-8.58 3.9a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0zM22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+          <h3 style="font-size: 22px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0;">Capacitación y pilotaje</h3>
+          <p style="font-size: 15px; line-height: 1.5; margin: 12px 0 0; color: color-mix(in srgb, var(--color-bg) 75%, transparent);">Academia de pilotos: teoría, práctica en campo real y acompañamiento hasta la credencial DGAC.</p>
+        </div>
+        <div class="blueprint" style="flex: 1 1 240px; padding: 24px; border-color: color-mix(in srgb, var(--color-bg) 30%, transparent); background: rgba(244, 244, 245, 0.05); backdrop-filter: blur(2px);">
+          <i class="corner tl" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner tr" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner bl" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner br" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8bc34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 28px; height: 28px; display: block; margin-bottom: 14px;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          <h3 style="font-size: 22px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0;">Servicio técnico y postventa</h3>
+          <p style="font-size: 15px; line-height: 1.5; margin: 12px 0 0; color: color-mix(in srgb, var(--color-bg) 75%, transparent);">Taller propio con stock de repuestos: hélices, baterías, sensores. Tu operación nunca se detiene.</p>
+        </div>
+        <div class="blueprint" style="flex: 1 1 240px; padding: 24px; border-color: color-mix(in srgb, var(--color-bg) 30%, transparent); background: rgba(244, 244, 245, 0.05); backdrop-filter: blur(2px);">
+          <i class="corner tl" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner tr" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner bl" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i><i class="corner br" style="color: color-mix(in srgb, var(--color-bg) 55%, transparent);"></i>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8bc34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 28px; height: 28px; display: block; margin-bottom: 14px;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10zM2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+          <h3 style="font-size: 22px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0;">Asesoría agronómica</h3>
+          <p style="font-size: 15px; line-height: 1.5; margin: 12px 0 0; color: color-mix(in srgb, var(--color-bg) 75%, transparent);">Dosis, calendario y estrategia de aplicación junto a tu equipo técnico, cultivo por cultivo.</p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 32px;">
+        <span style="display: inline-flex; padding: 5px 12px; background: #8bc34a; color: #0e1a14; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Piloto aplicador DGAC</span>
+        <span style="display: inline-flex; padding: 5px 12px; background: #8bc34a; color: #0e1a14; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Aplicador de plaguicidas SAG</span>
+        <span style="display: inline-flex; padding: 5px 12px; background: #8bc34a; color: #0e1a14; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Integrador DJI Agras</span>
+        <span style="display: inline-flex; padding: 5px 12px; background: #8bc34a; color: #0e1a14; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Garantía y repuestos</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos" style="padding: clamp(32px, 4vw, 56px) 0;">
+    <span style="display: block; font-size: 13px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #1e6b43; margin-bottom: 12px;">06 · El Agras en acción</span>
+    <hr style="height: 1px; border: 0; margin: 0 0 32px; background: var(--color-divider);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: clamp(24px, 3vw, 40px);">
+      <div>
+        <figure class="blueprint" style="margin: 0; position: relative;">
+          <video src="https://www-cdn.djiits.com/reactor/assets/_next/static/videos/51806b53-62b4-48e2-9f56-eef3c2d29840.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--color-accent-900);"></video>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </figure>
+        <p style="margin: 12px 0 0;"><span style="display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #1e6b43;">Campos amplios</span><span style="display: block; font-size: 13px; line-height: 1.5; margin-top: 2px; color: color-mix(in srgb, var(--color-text) 65%, transparent);">Hasta 20 m/s y 5–13 m de ancho de pulverización.</span></p>
+      </div>
+      <div>
+        <figure class="blueprint" style="margin: 0; position: relative;">
+          <video src="https://www-cdn.djiits.com/reactor/assets/_next/static/videos/1d4c248b-df78-4fa5-a3d1-54debc3d7821.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--color-accent-900);"></video>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </figure>
+        <p style="margin: 12px 0 0;"><span style="display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #1e6b43;">Huertos y frutales</span><span style="display: block; font-size: 13px; line-height: 1.5; margin-top: 2px; color: color-mix(in srgb, var(--color-text) 65%, transparent);">Niebla fina que penetra copas densas hasta el envés de la hoja.</span></p>
+      </div>
+      <div>
+        <figure class="blueprint" style="margin: 0; position: relative;">
+          <video src="https://www-cdn.djiits.com/reactor/assets/_next/static/videos/e363ee67-1caf-46e0-a704-6a823a3e92c2.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--color-accent-900);"></video>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </figure>
+        <p style="margin: 12px 0 0;"><span style="display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #1e6b43;">Evasión de obstáculos</span><span style="display: block; font-size: 13px; line-height: 1.5; margin-top: 2px; color: color-mix(in srgb, var(--color-text) 65%, transparent);">LiDAR, radar de onda milimétrica y Penta-Vision.</span></p>
+      </div>
+      <div>
+        <figure class="blueprint" style="margin: 0; position: relative;">
+          <video src="https://www-cdn.djiits.com/reactor/assets/_next/static/videos/909cdcd3-01db-4029-ac65-41e6c571e0b5.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--color-accent-900);"></video>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </figure>
+        <p style="margin: 12px 0 0;"><span style="display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #1e6b43;">Izaje de carga pesada</span><span style="display: block; font-size: 13px; line-height: 1.5; margin-top: 2px; color: color-mix(in srgb, var(--color-text) 65%, transparent);">Control de balanceo y navegación automática entre puntos.</span></p>
+      </div>
+    </div>
+    <p style="font-size: 13px; margin: 24px 0 0; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Material audiovisual oficial DJI Agriculture. ¿Quieres verlo en tu campo? <a href="#contacto">Agenda una demo</a>.</p>
+  </section>
+
+  <section id="enterprise" style="padding: clamp(32px, 4vw, 56px) 0;">
+    <span style="display: block; font-size: 13px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #1e6b43; margin-bottom: 12px;">06 · Línea enterprise — más allá del agro</span>
+    <hr style="height: 1px; border: 0; margin: 0 0 32px; background: var(--color-divider);">
+    <div style="display: flex; flex-wrap: wrap; gap: clamp(24px, 3vw, 40px);">
+      <div class="blueprint" style="flex: 1 1 340px; position: relative;">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <figure class="duotone" style="margin: 0;">
+          <img src="assets/guia/05-dji-dock-3-l-nea-enterprise-15-im-genes-3.jpg" alt="DJI Dock 3 operando de forma autónoma en terreno" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover;">
+        </figure>
+        <div style="padding: 24px;">
+          <h3 style="font-size: 24px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0;">DJI Dock 3</h3>
+          <p style="font-size: 15px; line-height: 1.5; margin: 10px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Operación autónoma 24/7: el dron despega, patrulla y regresa a su estación sin operador en terreno. Vigilancia de faenas, monitoreo de infraestructura y respuesta a emergencias.</p>
+        </div>
+      </div>
+      <div class="blueprint" style="flex: 1 1 340px; position: relative;">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <figure class="duotone" style="margin: 0;">
+          <img src="assets/guia/06-matrice-4-inspecci-n-profesional-17-im-genes-0.jpg" alt="Operador con DJI Matrice 4 inspeccionando un puente" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover;">
+        </figure>
+        <div style="padding: 24px;">
+          <h3 style="font-size: 24px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0;">DJI Matrice 4</h3>
+          <p style="font-size: 15px; line-height: 1.5; margin: 10px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Inspección profesional con cámaras de alta resolución y térmica: energía, minería, construcción y topografía. El mismo soporte NASE, otra industria.</p>
+        </div>
+      </div>
+    </div>
+    <p style="font-size: 13px; margin: 20px 0 0; color: color-mix(in srgb, var(--color-text) 60%, transparent);">¿Tu proyecto no es agrícola? <a href="#contacto">Conversemos igual</a> — integramos soluciones DJI Enterprise a medida.</p>
+  </section>
+
+  <section id="contacto" style="padding: clamp(40px, 5vw, 72px) 0 clamp(32px, 4vw, 56px);">
+    <span style="display: block; font-size: 13px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: #1e6b43; margin-bottom: 12px;">07 · Solicita tu cotización</span>
+    <hr style="height: 1px; border: 0; margin: 0 0 32px; background: var(--color-divider);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 72px); align-items: start;">
+      <form class="blueprint" style="padding: clamp(24px, 3vw, 32px); display: grid; gap: 16px; position: relative;" onSubmit="{{ onSubmit }}">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="field">
+          <label for="f-nombre">Nombre</label>
+          <input class="input" id="f-nombre" type="text" required="{{ true }}" value="{{ fNombre }}" onChange="{{ onNombre }}" placeholder="Tu nombre">
+        </div>
+        <div class="field">
+          <label for="f-telefono">Teléfono</label>
+          <input class="input" id="f-telefono" type="tel" required="{{ true }}" value="{{ fTelefono }}" onChange="{{ onTelefono }}" placeholder="+56 9 …">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="field">
+            <label for="f-cultivo">Cultivo</label>
+            <select class="input" id="f-cultivo" value="{{ fCultivo }}" onChange="{{ onCultivo }}">
+              <option value="">— Selecciona —</option>
+              <option value="Cerezo">Cerezo</option>
+              <option value="Vid/Viñedo">Vid / Viñedo</option>
+              <option value="Maíz">Maíz</option>
+              <option value="Arándano">Arándano</option>
+              <option value="Trigo">Trigo</option>
+              <option value="Pastura/Forraje">Pradera / Forraje</option>
+              <option value="Hortalizas">Hortalizas</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-area">Hectáreas</label>
+            <input class="input" id="f-area" type="number" min="0" value="{{ fArea }}" onChange="{{ onArea }}" placeholder="0">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-modelo">Modelo de interés</label>
+          <select class="input" id="f-modelo" value="{{ fModelo }}" onChange="{{ onModelo }}">
+            <option value="">— Según tu superficie —</option>
+            <option value="DJI Agras T25P">DJI Agras T25P</option>
+            <option value="DJI Agras T55">DJI Agras T55</option>
+            <option value="DJI Agras T70P">DJI Agras T70P</option>
+            <option value="DJI Agras T100">DJI Agras T100</option>
+          </select>
+          <span style="font-size: 12px; margin-top: 4px; color: color-mix(in srgb, var(--color-text) 60%, transparent);">{{ sugerencia }}</span>
+        </div>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; padding: 12px 16px; border: 1px solid #1e6b43; background: color-mix(in srgb, #8bc34a 14%, transparent); font-size: 14px; line-height: 1.5; color: #1e6b43;">Solicitud recibida ({{ sent }}). El equipo comercial de NASE te contactará a la brevedad.</p>
+        </sc-if>
+        <div>
+          <button type="submit" class="btn btn-primary btn-block" style="background: #1e6b43; border-color: #1e6b43;" style-hover="background: #2e9159;">Enviar solicitud</button>
+        </div>
+      </form>
+      <div>
+        <figure class="blueprint" style="margin: 0 0 28px; position: relative;">
+          <image-slot id="contacto-campo" shape="rect" src="assets/guia/fotos-reales-en-campo-24-fotos-jpg-58-mb-cu-1.jpg" placeholder="Arrastra una foto de tu campo en el Maule" style="width: 100%; aspect-ratio: 16 / 9;" role="img" aria-label="DJI Agras sobre el campo"></image-slot>
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        </figure>
+        <h3 style="font-size: 32px; letter-spacing: 0.02em; text-transform: uppercase; margin: 0;">Hablemos de tu campo</h3>
+        <p style="font-size: 15px; line-height: 1.5; max-width: 48ch; margin: 12px 0 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Cuéntanos cultivo y superficie, y te recomendamos el modelo Agras y la configuración correcta. Cobertura: Región del Maule y zona centro-sur. Respondemos dentro de 24 horas hábiles.</p>
+        <div style="display: grid; gap: 12px; margin-top: 28px; font-size: 15px;">
+          <div style="display: flex; gap: 12px; align-items: center;"><svg viewBox="0 0 24 24" fill="none" stroke="#1e6b43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; flex: none;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"></path></svg><span style="width: 9ch; flex: none; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: color-mix(in srgb, var(--color-text) 60%, transparent);">WhatsApp</span><span>{{ whatsapp }}</span></div>
+          <div style="display: flex; gap: 12px; align-items: center;"><svg viewBox="0 0 24 24" fill="none" stroke="#1e6b43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; flex: none;"><path d="M22 6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2zM22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><span style="width: 9ch; flex: none; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Correo</span><span>{{ email }}</span></div>
+          <div style="display: flex; gap: 12px; align-items: center;"><svg viewBox="0 0 24 24" fill="none" stroke="#1e6b43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; flex: none;"><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zM16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"></path></svg><span style="width: 9ch; flex: none; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Instagram</span><span>{{ instagram }}</span></div>
+          <div style="display: flex; gap: 12px; align-items: center;"><svg viewBox="0 0 24 24" fill="none" stroke="#1e6b43" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width: 18px; height: 18px; flex: none;"><path d="M20 10c0 4.99-5.54 10.19-7.35 11.76a1 1 0 0 1-1.3 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0zM15 10a3 3 0 1 1-6 0a3 3 0 1 1 6 0"></path></svg><span style="width: 9ch; flex: none; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Zona</span><span>Región del Maule, Chile</span></div>
+        </div>
+        <p style="font-size: 13px; line-height: 1.6; max-width: 48ch; margin: 28px 0 0; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Cada solicitud entra directo al pipeline comercial de NASE con tu cultivo, superficie y modelo sugerido.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="position: relative; background: #0e1a14; margin: clamp(32px, 4vw, 56px) calc(50% - 50vw) 0;">
+    <div style="max-width: 1160px; margin: 0 auto; padding: clamp(36px, 5vw, 56px) clamp(20px, 5vw, 72px); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;">
+      <div>
+        <img src="assets/logo-nase-blanco.png" alt="NASE Agrotech" style="display: block; height: 46px; width: auto;">
+        <p style="font-size: 13px; line-height: 1.6; margin: 14px 0 0; color: color-mix(in srgb, var(--color-bg) 65%, transparent);">© 2026 NASE Agrotech · Distribuidor e integrador DJI Agras<br>Región del Maule, Chile</p>
+      </div>
+      <span style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;">
+        <a href="#t100" style="color: color-mix(in srgb, var(--color-bg) 82%, transparent);">T100</a>
+        <a href="#enterprise" style="color: color-mix(in srgb, var(--color-bg) 82%, transparent);">Enterprise</a>
+        <a href="#modelos" style="color: color-mix(in srgb, var(--color-bg) 82%, transparent);">Modelos</a>
+        <a href="#servicios" style="color: color-mix(in srgb, var(--color-bg) 82%, transparent);">Servicios</a>
+        <a href="#contacto" style="color: color-mix(in srgb, var(--color-bg) 82%, transparent);">Contacto</a>
+        <a href="crm/demo.html" style="color: #8bc34a;">Acceso interno →</a>
+      </span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsapp&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;+56 9 — por definir&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Datos de contacto&quot;}, &quot;email&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;contacto@ — por definir&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Datos de contacto&quot;}, &quot;instagram&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;@ — por definir&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Datos de contacto&quot;}}">
+class Component extends DCLogic {
+  state = {
+    tab: 'DJI Agras T55',
+    nombre: '', telefono: '', cultivo: '', area: '', modelo: '', modeloTouched: false,
+    sent: null,
+  };
+
+  componentDidMount() {
+    const kick = () => document.querySelectorAll('video').forEach(v => { v.muted = true; if (v.paused) v.play().catch(() => {}); });
+    kick();
+    setTimeout(kick, 800);
+    const once = () => { kick(); window.removeEventListener('pointerdown', once); document.removeEventListener('visibilitychange', once); };
+    window.addEventListener('pointerdown', once);
+    document.addEventListener('visibilitychange', once);
+  }
+
+  recomendar(areaHa) {
+    const ha = Number(areaHa) || 0;
+    if (ha <= 0) return '';
+    if (ha <= 30) return 'DJI Agras T25P';
+    if (ha <= 80) return 'DJI Agras T55';
+    if (ha <= 200) return 'DJI Agras T70P';
+    return 'DJI Agras T100';
+  }
+
+  saveLead() {
+    const s = this.state;
+    const d = new Date();
+    const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    let leads = [];
+    try { leads = JSON.parse(localStorage.getItem('nase_web_leads') || '[]'); } catch (e) {}
+    let max = 0;
+    leads.forEach(l => { const m = (l.lead_id || '').match(/^WEB-(\d+)$/); if (m) max = Math.max(max, parseInt(m[1])); });
+    const leadId = 'WEB-' + String(max + 1).padStart(3, '0');
+    leads.unshift({
+      id: 'web-' + Date.now(), lead_id: leadId,
+      estado: 'Lead', lead_source: 'Web', fecha_primer_contacto: today,
+      clasificacion: 'Agrícola', tipo_cultivo: s.cultivo, area_ha: Number(s.area) || 0, fecha_aplicacion: '',
+      modelo_recomendado: s.modelo || this.recomendar(s.area) || '',
+      razon_social: '', contacto_principal: s.nombre, cargo: '', email: '',
+      telefono: s.telefono, whatsapp: s.telefono, ciudad_pais: 'Región del Maule, Chile',
+      usd_estimado: 0, moneda: 'USD', probabilidad_pct: 10,
+      cotizacion_competencia: 'No', competencia_detalle: '',
+      proxima_accion: 'Contactar lead del sitio web', fecha_proxima_accion: today, ultima_actividad: 'Formulario web enviado',
+      vendedor: '', notas: 'Lead generado desde el formulario del sitio web.', causa_perdida: '',
+      created_at: new Date().toISOString(),
+    });
+    localStorage.setItem('nase_web_leads', JSON.stringify(leads));
+    return leadId;
+  }
+
+  renderVals() {
+    const s = this.state;
+    const MODELS = [
+      { nombre: 'DJI Agras T25P', corto: 'T25P', perfil: 'El compacto: plegable, transportable en camioneta y operable por una sola persona. La puerta de entrada a la aplicación aérea en parcelas y huertos.', estrella: false,
+        img: 'assets/guia/04-t25p-el-compacto-33-archivos-1-video-0.jpg', imgFit: 'cover',
+        specs: [
+          { k: 'Pulverización', v: '25 L', sub: 'aspersores centrífugos' },
+          { k: 'Esparcido', v: '35 kg', sub: 'tolva compacta' },
+          { k: 'Formato', v: 'Plegable', sub: 'cabe en una camioneta' },
+          { k: 'Operación', v: '1 persona', sub: 'despliegue en minutos' },
+          { k: 'Posicionamiento', v: 'RTK', sub: '±10 cm' },
+          { k: 'Área recomendada', v: '≤ 30 ha', sub: 'por jornada' }] },
+      { nombre: 'DJI Agras T55', corto: 'T55', perfil: 'La entrada a la gama alta y sucesor del T50: 50 L de pulverización, plegado compacto, visión nocturna FPV y radares de arreglo en fase.', estrella: false,
+        img: 'assets/guia/03-t55-entrada-a-la-gama-8-archivos-2-videos-1.jpg', imgFit: 'cover',
+        specs: [
+          { k: 'Pulverización', v: '50 L', sub: 'caudal hasta 40 L/min' },
+          { k: 'Esparcido', v: '55 kg', sub: 'tolva de 80 L' },
+          { k: 'Izaje', v: '40 kg', sub: 'liberación de emergencia del cable' },
+          { k: 'Batería', v: 'DB1050', sub: 'carga rápida en 9 min' },
+          { k: 'Posicionamiento', v: 'RTK', sub: '±10 cm' },
+          { k: 'Área recomendada', v: '30–80 ha', sub: 'por jornada' }] },
+      { nombre: 'DJI Agras T70P', corto: 'T70P', perfil: 'El todoterreno: 70 L de pulverización, esparcido de alta tasa y carga con cabrestante — el equilibrio perfecto entre capacidad y agilidad para campos medianos a grandes.', estrella: false,
+        img: 'assets/guia/02-t70p-el-todoterreno-70-l-92-archivos-0.jpg', imgFit: 'cover',
+        specs: [
+          { k: 'Pulverización', v: '70 L', sub: 'doble atomización' },
+          { k: 'Esparcido', v: 'Alta tasa', sub: 'tornillo sin fin' },
+          { k: 'Carga', v: 'Cabrestante', sub: 'izaje con cable' },
+          { k: 'Sensores', v: 'Radar + visión', sub: 'arreglo en fase' },
+          { k: 'Posicionamiento', v: 'RTK', sub: '±10 cm' },
+          { k: 'Área recomendada', v: '80–200 ha', sub: 'por jornada' }] },
+      { nombre: 'DJI Agras T100', corto: 'T100', perfil: 'El buque insignia: 100 L de pulverización, esparcido de 150 L, izaje de 100 kg y Safety System 3.0 (LiDAR + radar mmwave + Penta-Vision). Máxima cobertura por jornada.', estrella: true,
+        img: 'assets/guia/01-t100-el-buque-insignia-100-l-99-archivos-0.jpg', imgFit: 'cover',
+        specs: [
+          { k: 'Pulverización', v: '100 L', sub: '30–40 L/min' },
+          { k: 'Esparcido', v: '150 L', sub: 'hasta 400 kg/min' },
+          { k: 'Izaje', v: '100 kg', sub: 'balanceo automático' },
+          { k: 'MTOW', v: '177 kg', sub: 'peso máx. al despegue' },
+          { k: 'Hélices', v: '62″', sub: 'fibra de carbono' },
+          { k: 'Velocidad', v: '20 m/s', sub: 'máx. de operación' },
+          { k: 'Batería', v: '41 Ah', sub: 'DB2160 · carga 8–9 min' },
+          { k: 'Seguridad', v: '3.0', sub: 'LiDAR + radar + Penta-Vision' }] },
+    ];
+    const active = MODELS.find(m => m.nombre === s.tab) || MODELS[0];
+    const set = (k) => (e) => this.setState({ [k]: e.target.value });
+    const sugerido = this.recomendar(s.area);
+    return {
+      t100Specs: [
+        { num: '01', val: '100 L', label: 'Estanque de pulverización · 30–40 L/min', icon: 'M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z' },
+        { num: '02', val: '150 L', label: 'Esparcido · hasta 400 kg/min', icon: 'M7 20h10M10 20c5.5-2.5.8-6.4 3-10M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8zM14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z' },
+        { num: '03', val: '100 kg', label: 'Capacidad de izaje', icon: 'M18 9l-6-6-6 6M12 3v14M5 21h14' },
+        { num: '04', val: '±10 cm', label: 'Precisión RTK', icon: 'M2 12a10 10 0 1 0 20 0a10 10 0 1 0-20 0M22 12h-4M6 12H2M12 6V2M12 22v-4' },
+        { num: '05', val: '177 kg', label: 'Peso máximo al despegue (MTOW)', icon: 'M12 14l4-4M3.34 19a10 10 0 1 1 17.32 0' },
+        { num: '06', val: '62″', label: 'Hélices de fibra de carbono', icon: 'M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2M9.6 4.6A2 2 0 1 1 11 8H2M12.6 19.4A2 2 0 1 0 14 16H2' },
+        { num: '07', val: '8–9 min', label: 'Carga batería DB2160 (41 Ah)', icon: 'M13 2 3 14h9l-1 8 10-12h-9l1-8z' },
+        { num: '08', val: '3.0', label: 'Safety System · LiDAR + radar', icon: 'M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z' },
+      ],
+      tabs: MODELS.map(m => ({
+        name: m.corto,
+        cls: m.nombre === s.tab ? 'btn btn-primary' : 'btn btn-secondary',
+        style: m.nombre === s.tab ? { background: '#1e6b43', borderColor: '#1e6b43', color: 'var(--color-bg)' } : {},
+        select: () => this.setState({ tab: m.nombre }),
+      })),
+      model: { ...active, quote: () => this.setState({ modelo: active.nombre, modeloTouched: true }) },
+      isT55: active.corto === 'T55', hasModelImg: active.corto !== 'T55' && !!active.img,
+      quoteT55: () => this.setState({ modelo: 'DJI Agras T55', modeloTouched: true }),
+      fNombre: s.nombre, fTelefono: s.telefono, fCultivo: s.cultivo, fArea: s.area,
+      fModelo: s.modelo,
+      onNombre: set('nombre'), onTelefono: set('telefono'), onCultivo: set('cultivo'),
+      onArea: (e) => {
+        const v = e.target.value;
+        this.setState(st => ({ area: v, modelo: st.modeloTouched ? st.modelo : this.recomendar(v) }));
+      },
+      onModelo: (e) => this.setState({ modelo: e.target.value, modeloTouched: true }),
+      sugerencia: sugerido && !s.modeloTouched ? `Sugerido por superficie: ${sugerido} (puedes cambiarlo)` : 'Se sugiere automáticamente al ingresar las hectáreas.',
+      sent: s.sent,
+      onSubmit: (e) => {
+        e.preventDefault();
+        if (!s.nombre.trim() || !s.telefono.trim()) return;
+        const id = this.saveLead();
+        this.setState({ sent: id, nombre: '', telefono: '', cultivo: '', area: '', modelo: '', modeloTouched: false });
+      },
+      whatsapp: this.props.whatsapp ?? '+56 9 — por definir',
+      email: this.props.email ?? 'contacto@ — por definir',
+      instagram: this.props.instagram ?? '@ — por definir',
+    };
+  }
+}
+</script>
+</body>
+</html>
