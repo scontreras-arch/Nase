@@ -1,0 +1,48 @@
+{
+ "estilo": {
+  "pal": "nase",
+  "font": "industrial",
+  "tex": "grid",
+  "bgc": "auto",
+  "tab": "clasica",
+  "bgcustom": "#f4f2ec",
+  "logo": 1.4,
+  "fsE": 1.45,
+  "fsT": 0.9,
+  "fsB": 0.9,
+  "custom": {
+   "acc": "#1e6b43",
+   "dark": "#0e1a14",
+   "lime": "#8bc34a",
+   "star": "#e6a532"
+  }
+ },
+ "textos": {
+  "index#doc|span|0": "Distribuidor Oficial DJI Agriculture - Enterprise",
+  "index#t55|span|0": "Estreno — nuevo DJI Agras T55",
+  "index#t55|h2|0": "50 litros • UNA PERSONA • TODO EL CAMPO",
+  "index#t100|p|0": "<span>Fuente Oficial: ag.dji.com/t100/specs · Safety System 3.0 (LiDAR + radar mmWave + Penta-Vision).</span>\n<a href=\"t100.html\" style=\"color:var(--nase-lime);font-weight:600;text-decoration:none;\">Explorar AGRAS T100 en 3D →</a>",
+  "index#modelos-grid|h3|0": "Agras T100",
+  "index#modelos-grid|h3|1": "Agras T70P",
+  "index#modelos-grid|h3|2": "Agras T55",
+  "index#modelos-grid|p|2": "50 L •&nbsp; Combina rendimiento, agilidad y facilidad de operación • Video de lanzamiento y galería.",
+  "index#modelos-grid|h3|3": "Agras T25P",
+  "index#modelos-grid|p|3": "Compacto, plegable y fácil de transportar • Visor 360° con esparcido y vuelo.",
+  "index#servicios|p|0": "Te ayudamos a elegir la solución DJI Agras adecuada para tu operación y la entregamos configurada directamente en tu campo.<br><br>Integramos drone, baterías, sistema de carga y accesorios, realizamos la configuración inicial y ponemos el equipo en marcha contigo.<br><br><strong>Desde el primer día, listo para operar.</strong>",
+  "index#servicios|p|1": "Formación teórica y práctica en campo real para desarrollar las competencias necesarias para una operación segura y profesional, con acompañamiento durante el proceso de obtención de la credencial DGAC.",
+  "index#servicios|p|2": "<span>Diagnóstico, mantenimiento, reparación, soporte especializado y disponibilidad de repuestos originales para mantener tus equipos trabajando cuando más los necesitas.</span> <a href=\"repuestos.html\" style=\"color:var(--nase-lime);\">Visita la tienda de repuestos</a>.",
+  "index#servicios|p|4": "<b><span>Nosotros volamos por ti.<br></span></b><span>Accede a la tecnología DJI Agras sin necesidad de adquirir un equipo.<br>Realizamos aplicaciones aéreas con nuestros drones y pilotos certificados, trabajando junto al equipo técnico de tu campo.</span>",
+  "index#enterprise|span|0": "DJI enterprise — tecnología más allá del agro",
+  "index#contacto|p|1": "Cuéntanos qué produces y qué necesitas resolver. Nuestro equipo te ayudará a definir la alternativa más adecuada para tu operación: incorporar un DJI Agras o realizar tus aplicaciones aéreas con nuestros pilotos certificados.<br><br>Atendemos en la Región del Maule y la zona Centro-Sur de Chile. <strong>Respondemos dentro de 24 horas hábiles.</strong>",
+  "index#nosotros|h2|0": "TECNOLOGIA PARA EL CAMPO. RESPALDO PARA QUIEN LA TRABAJA",
+  "t100#app|p|3": "Trabajamos con <strong>repuestos y accesorios originales DJI</strong> para toda la gama Agras. Encuentra lo que necesita tu equipo, arma tu pedido en nuestra tienda y solicita tu cotización directamente con NASE Agrotech.",
+  "t100#app|h2|2": "agras T100 en terreno",
+  "t100#app|h2|3": "¿Listo para llevarlo a tu campo?",
+  "index#doc|p|0": "Tecnología DJI Agriculture, respaldada por especialistas que acompañan cada etapa de tu operación.",
+  "t100#app|span|0": "MÁXIMA CAPACIDAD PARA GRANDES OPERACIONES",
+  "t100#app|p|0": "100 L de pulverización. 150 L de esparcido. 100 kg de izaje.<br><br>El equipo de mayor capacidad de la gama DJI Agras, desarrollado para operaciones que buscan aumentar productividad y reducir tiempos entre cargas.<br><br>Su avanzado sistema de percepción <strong>LiDAR + radar mmWave + Penta-Vision</strong> permite operar con mayor seguridad, estabilidad y precisión en todo tipo de terrenos.",
+  "t25p#app|span|0": "Compacto, plegable y fácil de transportar",
+  "index#cifras|span|0": "El terreno manda • El dron se adapta",
+  "index#cifras|h3|1": "Cobertura real desde"
+ }
+}
