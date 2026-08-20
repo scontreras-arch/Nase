@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>NASE Agrotech · Panel</title>
+<link rel="icon" href="../assets/img/logo/logo-nase.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0b100c; --panel:#101812; --line:#23301f; --tx:#e8ede8; --tx2:#9fb3a2; --tx3:#6f8073;
+          --verde:#6ba31f; --lima:#8bc34a; --cyan:#4fb3a4; --ambar:#e6a532; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 50% 25%, #13241a, #080d09 70%);
+         color: var(--tx); font-family: 'Manrope', sans-serif; display: flex; align-items: center; justify-content: center; padding: 1.2rem; }
+  .wrap { width: min(760px, 96vw); }
+  .marca { text-align: center; margin-bottom: 1.8rem; }
+  .marca img { height: 62px; background: #fff; border-radius: 12px; padding: 8px 12px; }
+  .marca h1 { font-size: 1.35rem; margin: 1rem 0 .2rem; letter-spacing: .01em; }
+  .marca p { color: var(--tx2); font-size: .87rem; margin: 0; }
+
+  .card { background: var(--panel); border: 1px solid rgba(139,195,74,.3); border-radius: 15px; padding: 2rem; }
+  label.f { display: block; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--tx2);
+            margin: 0 0 .35rem; font-family: 'JetBrains Mono', monospace; }
+  input { width: 100%; background: #0b110c; border: 1px solid var(--line); border-radius: 8px; color: var(--tx);
+          padding: .7rem .8rem; font-size: .95rem; font-family: inherit; }
+  input:focus { outline: 2px solid var(--verde); border-color: var(--verde); }
+  .btn { appearance: none; cursor: pointer; border: 0; border-radius: 9px; background: var(--verde); color: #08120a;
+         font-weight: 800; font-size: 1rem; padding: .8rem 1rem; width: 100%; font-family: inherit; margin-top: 1rem; }
+  .btn:hover { background: var(--lima); }
+  .err { display: none; background: rgba(224,92,75,.15); border: 1px solid rgba(224,92,75,.5); color: #ffb4a8;
+         padding: .55rem .8rem; border-radius: 7px; font-size: .82rem; margin-bottom: .9rem; }
+  .hint { text-align: center; font-size: .78rem; color: var(--tx3); margin: 1rem 0 0; font-family: 'JetBrains Mono', monospace; }
+
+  .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 1.1rem; }
+  .app { display: block; text-decoration: none; color: inherit; background: var(--panel);
+         border: 1px solid var(--line); border-radius: 15px; padding: 1.7rem 1.5rem; transition: border-color .16s, transform .16s; }
+  .app:hover { border-color: var(--lima); transform: translateY(-3px); }
+  .app .ic { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+             border-radius: 12px; background: rgba(139,195,74,.14); color: var(--lima); margin-bottom: 1rem; }
+  .app .ic svg { width: 26px; height: 26px; }
+  .app.cy .ic { background: rgba(79,179,164,.14); color: var(--cyan); }
+  .app.bod .ic { background: rgba(230,165,50,.14); color: var(--ambar); }
+  .app h2 { font-size: 1.12rem; margin: 0 0 .35rem; }
+  .app p { font-size: .84rem; line-height: 1.5; color: var(--tx2); margin: 0; }
+  .app .go { display: inline-block; margin-top: 1rem; font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+             text-transform: uppercase; color: var(--lima); font-family: 'JetBrains Mono', monospace; }
+  .app.cy .go { color: var(--cyan); }
+  .app.bod .go { color: var(--ambar); }
+  .pie { text-align: center; margin-top: 1.6rem; font-size: .8rem; }
+  .pie a { color: var(--tx2); text-decoration: none; }
+  .pie a:hover { color: var(--lima); }
+  @media (max-width: 640px) { .apps { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="marca">
+    <img src="../assets/img/logo/logo-nase.png" alt="NASE Agrotech">
+    <h1>Panel de gestión</h1>
+    <p>NASE Agrotech · acceso del equipo</p>
+  </div>
+
+  <!-- ACCESO -->
+  <div class="card" id="acceso">
+    <div class="err" id="err"></div>
+    <div id="wrap-clave" hidden>
+      <label class="f" for="clave">Clave de acceso</label>
+      <input type="password" id="clave" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <button class="btn" id="entrar">Ingresar</button>
+    <p class="hint" id="hint">Un solo acceso para el CRM y el Inventario</p>
+  </div>
+
+  <!-- SELECTOR -->
+  <div id="selector" hidden>
+    <div class="apps">
+      <a class="app" href="../crm/demo.html">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+        <h2>CRM · Pipeline</h2>
+        <p>Leads, seguimiento comercial, agenda y cotizaciones. Con asistente de IA para actualizar fichas.</p>
+        <span class="go">Entrar al CRM →</span>
+      </a>
+      <a class="app cy" href="./inventario.html">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg></div>
+        <h2>Inventario</h2>
+        <p>Stock de equipos y repuestos, movimientos, creación de productos y control de la vitrina del sitio.</p>
+        <span class="go">Entrar al inventario →</span>
+      </a>
+      <a class="app bod" href="../bodega/">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M10 18h4"/><path d="M8.5 7.5h7M8.5 11h7"/></svg></div>
+        <h2>Bodega · Celular</h2>
+        <p>App para el galpón: entradas y salidas al instante, toma de inventario y alta de productos. Mismo stock que el panel.</p>
+        <span class="go">Abrir en el celular →</span>
+      </a>
+    </div>
+    <p class="pie"><a href="../index.html">← Volver al sitio</a> · <a href="#" id="salir">Cerrar sesión</a></p>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var TK = "nase-admin-token";
+  var err = document.getElementById("err");
+
+  function mostrarSelector() {
+    document.getElementById("acceso").hidden = true;
+    document.getElementById("selector").hidden = false;
+  }
+
+  /* el campo de clave solo se muestra si el servidor la exige */
+  fetch("/api/modo").then(function (r) { return r.json(); }).then(function (d) {
+    document.getElementById("wrap-clave").hidden = !d.pideClave;
+    if (!d.pideClave) document.getElementById("hint").textContent = "Acceso directo · modo demo";
+  }).catch(function () { document.getElementById("wrap-clave").hidden = false; });
+
+  async function entrar() {
+    err.style.display = "none";
+    var campo = document.getElementById("clave");
+    var clave = campo ? campo.value : "";
+    try {
+      var r = await fetch("/api/login", {
+        method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ clave: clave }),
+      });
+      var d = await r.json();
+      if (!r.ok) throw new Error(d.error || "No se pudo ingresar");
+      sessionStorage.setItem(TK, d.token);
+      mostrarSelector();
+    } catch (e) {
+      err.textContent = e.message;
+      err.style.display = "block";
+    }
+  }
+
+  document.getElementById("entrar").addEventListener("click", entrar);
+  document.getElementById("clave").addEventListener("keydown", function (e) { if (e.key === "Enter") entrar(); });
+  document.getElementById("salir").addEventListener("click", function (e) {
+    e.preventDefault();
+    sessionStorage.removeItem(TK);
+    location.reload();
+  });
+
+  if (sessionStorage.getItem(TK)) mostrarSelector();
+})();
+</script>
+</body>
+</html>
