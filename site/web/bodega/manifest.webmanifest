@@ -1,0 +1,17 @@
+{
+  "name": "NASE Bodega · Inventario",
+  "short_name": "NASE Bodega",
+  "description": "App de bodega de NASE Agrotech: entradas, salidas, toma de inventario y alta de productos. Comparte el mismo stock que el panel y la tienda del sitio.",
+  "lang": "es-CL",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b100c",
+  "theme_color": "#0b100c",
+  "icons": [
+    { "src": "./icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

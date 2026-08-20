@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-label="Repuesto sin foto">
+  <rect width="320" height="240" fill="#f1efe9"/>
+  <g fill="none" stroke="#9aa694" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- tuerca / pieza genérica -->
+    <path d="M160 78 l30 17 v34 l-30 17 -30-17 v-34 z"/>
+    <circle cx="160" cy="112" r="14"/>
+    <path d="M96 158 h128"/>
+  </g>
+  <text x="160" y="192" text-anchor="middle" font-family="Barlow, Arial, sans-serif"
+        font-size="15" letter-spacing="1.6" fill="#9aa694">SIN FOTO</text>
+</svg>
