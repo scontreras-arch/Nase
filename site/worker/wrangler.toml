@@ -1,0 +1,24 @@
+# Reconstruido a partir del Worker desplegado `curly-feather-8a3c` (no estaba
+# respaldado en el repo). Verificar antes del primer deploy desde aquí.
+#
+# El token de administrador se carga como secret, nunca en este archivo:
+#   wrangler secret put ADMIN_TOKEN
+#
+# Pendiente de seguridad (ver README): ACCESO_ABIERTO=1 entrega el token admin
+# sin clave en POST /api/login. Bajar a "0" cuando termine la fase de pruebas.
+
+name = "curly-feather-8a3c"
+main = "src/index.js"
+compatibility_date = "2026-07-24"
+
+[assets]
+directory = "../web"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nase-inventario"
+database_id = "e837ecfb-2a63-4341-9011-8f5e0a826ec3"
+
+[vars]
+ACCESO_ABIERTO = "1"
