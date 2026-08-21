@@ -97,10 +97,16 @@ catálogo los reporta todos como `a-pedido`. Las tablas `ventas`,
 - El CRM espera un `config.js` con las credenciales de Supabase. Se incluye
   `crm/config.example.js` como plantilla; `config.js` está en `.gitignore`.
 
-## Pendiente de revisar
+## Acceso administrativo
 
-La variable `ACCESO_ABIERTO` del Worker está en `1`. Con ese valor,
-`POST /api/login` entrega el token de administrador sin pedir clave, lo que
-deja el panel administrativo (crear y eliminar productos, registrar ventas,
-ajustar stock) accesible públicamente. Conviene ponerla en `0` y rotar el
-token si el sitio ya no está en pruebas.
+La variable `ACCESO_ABIERTO` del Worker **debe permanecer en `0`** (verificado
+en producción). Con `1`, `POST /api/login` entrega el token de administrador
+sin pedir clave y deja el panel administrativo —crear y eliminar productos,
+registrar ventas, ajustar stock— accesible públicamente.
+
+Este documento indicó `1` hasta el 20-08-2026, cuando producción ya estaba en
+`0`; ese dato desactualizado se copió al `wrangler.toml` reconstruido y un
+deploy revirtió el valor por error. El incidente se corrigió el mismo día
+(deploy `a46d85c6`) y el valor quedó documentado en
+`site/worker/wrangler.toml`. Antes de desplegar, contrastar la configuración
+con la del Worker en producción, no con este README.
