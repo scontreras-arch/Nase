@@ -36,7 +36,7 @@ window.MODELS = {
     name: "DJI Agras T100", short: "T100",
     kicker: "",
     tagline: "100 L de pulverización, 150 L de esparcido y 100 kg de izaje. El dron agrícola más capaz que ha llegado a Chile, con Safety System 3.0 (LiDAR + radar mmWave + Penta-Vision).",
-    cardNote: "100 L · el más capaz de la gama. Visor 360, estados y configuraciones.",
+    cardNote: "100 L de pulverización • 150 L de esparcido • 100 kg de izaje • Visor 360° y configuraciones.",
     specs: [
       { v: "100 L", l: "Pulverización" },
       { v: "150 L", l: "Esparcido" },
@@ -86,7 +86,7 @@ window.MODELS = {
     kicker: "El todoterreno",
     eyebrow: "Un equipo. Múltiples soluciones",
     tagline: "Con 70 litros de pulverización y funciones de esparcido e izaje de carga, el DJI Agras T70P ofrece la versatilidad que exige la agricultura moderna, permitiendo realizar distintas labores con un solo equipo.",
-    cardNote: "70 L · pulveriza, esparce y carga. Visor 360 con 4 configuraciones.",
+    cardNote: "70 L • Diseñado para pulverizar y esparcir • Visor 360° y configuraciones.",
     specs: [
       { v: "70 L", l: "Pulverización · doble atomización" },
       { v: "Alta tasa", l: "Esparcido · tornillo sin fin" },
