@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NASE Agrotech · CRM demo (datos de ejemplo, sin login)">
+<meta name="robots" content="noindex,nofollow">
+<title>NASE Agrotech · CRM — Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<div id="demo-badge" style="position:fixed;left:16px;bottom:16px;z-index:9999;display:flex;align-items:center;gap:.5rem;background:rgba(8,8,12,.92);border:1px solid rgba(107,163,31,.5);border-radius:999px;padding:.45rem .8rem;font-family:'JetBrains Mono',monospace;font-size:11px;color:#aed581;box-shadow:0 6px 24px rgba(0,0,0,.5)">
+    <span style="width:7px;height:7px;border-radius:50%;background:#8bc34a;box-shadow:0 0 8px #8bc34a"></span>
+    <span>Modo demo · datos de ejemplo (no se guardan)</span>
+</div>
+
+<!-- ===== LOGIN (no se usa en demo, sesión falsa) ===== -->
+<div id="login-view" class="login-container" style="display:none">
+    <div class="login-card">
+        <div class="brand" style="text-align:center">
+            <img src="./assets/logo-nase.jpg" alt="NASE Agrotech" style="height:64px;background:#fff;border-radius:10px;padding:8px 12px;margin-bottom:1rem">
+            <h1 class="brand-title">CRM · Pipeline</h1><div class="brand-tagline">Demo</div>
+        </div>
+        <form id="login-form" class="login-form">
+            <div class="field"><label>Email</label><input type="email" id="login-email"></div>
+            <div class="field"><label>Password</label><input type="password" id="login-password"></div>
+            <button type="submit" class="btn-primary" id="login-submit">Entrar</button>
+            <div class="login-actions"><button type="button" class="btn-link" id="signup-toggle">Crear cuenta</button><button type="button" class="btn-link" id="forgot-password">Recuperar</button></div>
+            <div id="login-error" class="alert alert-error" style="display:none"></div>
+            <div id="login-success" class="alert alert-success" style="display:none"></div>
+        </form>
+    </div>
+</div>
+
+<div id="app-view" style="display:none">
+    <header class="app-header">
+        <div class="header-content">
+            <div class="header-left">
+                <a class="brand-mini" href="../index.html" title="Volver al sitio" style="display:flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit">
+                    <img src="./assets/logo-nase.jpg" alt="NASE" style="height:34px;background:#fff;border-radius:7px;padding:3px 6px">
+                    <div><div class="brand-mini-eyebrow">NASE Agrotech</div><div class="brand-mini-title">CRM · Pipeline</div></div>
+                </a>
+                <nav class="nav-tabs">
+                    <button class="nav-tab active" data-view="dashboard"><span>Dashboard</span></button>
+                    <button class="nav-tab" data-view="kanban"><span>Pipeline</span></button>
+                    <button class="nav-tab" data-view="agenda"><span>Agenda</span><span id="badge-agenda" class="badge" style="display:none">0</span></button>
+                    <button class="nav-tab" data-view="auditoria"><span>Auditoría</span></button>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="user-info">👤 <span id="user-email"></span></div>
+                <button class="btn-secondary" id="btn-export"><span>Exportar CSV</span></button>
+                <button class="btn-secondary cyan" id="btn-paste-json"><span>JSON</span></button>
+                <button class="btn-primary" id="btn-new-lead"><span>+ Nuevo</span></button>
+                <button class="btn-ghost" id="btn-logout" title="Recargar demo">⎋</button>
+            </div>
+        </div>
+    </header>
+    <main id="view-dashboard" class="view active">
+        <div class="container">
+            <div class="kpi-grid" id="kpi-grid"></div>
+            <div class="filters-bar">
+                <div class="search-wrap"><input type="text" id="search-input" placeholder="Buscar empresa, contacto, cultivo, vendedor…"></div>
+                <select id="filter-estado"><option value="all">Todos los estados</option></select>
+                <select id="filter-clasificacion"><option value="all">Toda clasificación</option></select>
+                <select id="filter-cultivo"><option value="all">Todo cultivo</option></select>
+                <select id="filter-vendedor"><option value="all">Todos los vendedores</option></select>
+                <div class="leads-count" id="leads-count"></div>
+            </div>
+            <div class="table-wrap"><div class="table-header"><h3>Leads priorizados</h3><span class="table-subtitle">★ Top 5 por valor ponderado</span></div><div id="leads-table"></div></div>
+        </div>
+    </main>
+    <main id="view-kanban" class="view" style="display:none"><div class="container container-wide"><div class="kanban-board" id="kanban-board"></div></div></main>
+    <main id="view-agenda" class="view" style="display:none"></main>
+    <main id="view-auditoria" class="view" style="display:none"></main>
+</div>
+
+<div id="modal-root"></div>
+<div id="toast" class="toast" style="display:none"></div>
+<div id="loading" class="loading-overlay" style="display:none"><div class="spinner"></div></div>
+
+<!-- ===== SCRIPTS (modo demo) ===== -->
+<script src="./demo.data.js"></script>
+<script src="./core/constants.js"></script>
+<script src="./core/auth.js"></script>
+<script src="./core/events.js"></script>
+<script src="./modules/crm/crm.js"></script>
+<script src="./main.js"></script>
+
+<!-- ===== PORTAL DE ENTRADA: login ficticio + tour interactivo obligatorio ===== -->
+<style>
+#crm-gate { position: fixed; inset: 0; z-index: 20000; display: flex; align-items: center; justify-content: center; padding: 1rem; background: radial-gradient(ellipse at 50% 30%, #13241a 0%, #0a120d 70%); }
+#crm-gate .gate-card { width: min(560px, 94vw); background: #101812; border: 1px solid rgba(139,195,74,.35); border-radius: 14px; padding: 2rem 2.2rem; box-shadow: 0 24px 70px rgba(0,0,0,.6); color: #e8ede8; font-family: 'Manrope', sans-serif; }
+#crm-gate .gate-logo { display: block; height: 58px; background: #fff; border-radius: 10px; padding: 7px 11px; margin: 0 auto 1rem; }
+#crm-gate h1 { font-size: 1.35rem; margin: 0 0 .2rem; text-align: center; letter-spacing: .02em; }
+#crm-gate .gate-sub { text-align: center; color: #9fb3a2; font-size: .85rem; margin: 0 0 1.4rem; }
+#crm-gate .field { margin-bottom: .9rem; }
+#crm-gate .field label { display: block; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: #9fb3a2; margin-bottom: .3rem; font-family: 'JetBrains Mono', monospace; }
+#crm-gate .field input { width: 100%; box-sizing: border-box; background: #0b110c; border: 1px solid #2c3a2e; border-radius: 8px; color: #e8ede8; padding: .65rem .8rem; font-size: .95rem; font-family: inherit; }
+#crm-gate .field input:focus { outline: 2px solid #8bc34a; border-color: #8bc34a; }
+#crm-gate .gate-btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; width: 100%; border: 0; border-radius: 9px; background: #6ba31f; color: #0a120d; font-weight: 800; font-size: 1rem; padding: .8rem 1rem; cursor: pointer; font-family: inherit; }
+#crm-gate .gate-btn:hover { background: #8bc34a; }
+#crm-gate .gate-hint { text-align: center; font-size: .78rem; color: #7d8f80; margin: .9rem 0 0; font-family: 'JetBrains Mono', monospace; }
+/* ---- tour sobre la pantalla real ---- */
+#tour-hole { position: fixed; z-index: 20001; border-radius: 12px; pointer-events: none; box-shadow: 0 0 0 9999px rgba(5, 10, 7, 0.78), 0 0 0 3px #8bc34a, 0 0 26px rgba(139,195,74,.55); transition: all .35s cubic-bezier(.4,.7,.3,1); }
+#tour-tip { position: fixed; z-index: 20002; width: min(400px, 92vw); background: #101812; border: 1px solid rgba(139,195,74,.45); border-radius: 12px; padding: 1.1rem 1.3rem; color: #e8ede8; font-family: 'Manrope', sans-serif; box-shadow: 0 18px 50px rgba(0,0,0,.65); }
+#tour-tip .t-head { display: flex; align-items: center; justify-content: space-between; gap: .8rem; margin-bottom: .5rem; }
+#tour-tip .t-tag { background: #8bc34a; color: #0a120d; font-size: .62rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; padding: .2rem .55rem; border-radius: 4px; font-family: 'JetBrains Mono', monospace; }
+#tour-tip .t-prog { font-family: 'JetBrains Mono', monospace; font-size: .74rem; color: #9fb3a2; white-space: nowrap; }
+#tour-tip h3 { margin: 0 0 .35rem; font-size: 1.02rem; color: #fff; }
+#tour-tip .t-body { font-size: .86rem; line-height: 1.55; color: #cfe0cf; }
+#tour-tip .t-body b { color: #aed581; }
+#tour-tip .t-nav { display: flex; gap: .55rem; align-items: center; justify-content: flex-end; flex-wrap: wrap; margin-top: .9rem; }
+#tour-tip .t-btn { border: 0; border-radius: 8px; background: #6ba31f; color: #0a120d; font-weight: 800; font-size: .85rem; padding: .5rem 1rem; cursor: pointer; font-family: inherit; }
+#tour-tip .t-btn:hover { background: #8bc34a; }
+#tour-tip .t-btn.ghost { background: transparent; border: 1px solid #2c3a2e; color: #cfe0cf; font-weight: 600; }
+#tour-tip .t-btn.ghost:hover { border-color: #8bc34a; }
+#tour-tip .t-btn.gold { background: transparent; border: 1px solid #e6a532; color: #e6a532; text-decoration: none; display: inline-flex; align-items: center; gap: .4rem; padding: .5rem 1rem; font-weight: 700; }
+#tour-tip .t-btn.gold:hover { background: rgba(230,165,50,.14); }
+#tour-tip .t-dots { display: flex; gap: .35rem; margin-right: auto; }
+#tour-tip .t-dots i { width: 6px; height: 6px; border-radius: 50%; background: #2c3a2e; }
+#tour-tip .t-dots i.on { background: #8bc34a; }
+</style>
+<div id="crm-gate">
+  <div class="gate-card" id="gate-login">
+    <img class="gate-logo" src="./assets/logo-nase.jpg" alt="NASE Agrotech">
+    <h1>CRM · Pipeline NASE</h1>
+    <p class="gate-sub">Acceso equipo comercial</p>
+    <div class="field"><label>Email</label><input type="email" id="gate-email" placeholder="vendedor@naseagrotech.cl"></div>
+    <div class="field"><label>Contraseña</label><input type="password" id="gate-pass" placeholder="••••••••"></div>
+    <button type="button" class="gate-btn" id="gate-enter">Ingresar</button>
+    <p class="gate-hint">Demo — puedes ingresar sin credenciales</p>
+    <p style="text-align:center;margin:.7rem 0 0;font-size:.8rem"><a href="../admin/index.html" style="color:#8bc34a;text-decoration:none">Ir al panel · CRM o Inventario →</a></p>
+  </div>
+</div>
+<script>
+(function () {
+    'use strict';
+    var KEY = 'nase-crm-gate-v1';
+    var gate = document.getElementById('crm-gate');
+    if (sessionStorage.getItem(KEY)) { gate.remove(); return; }
+
+    /* ---- pasos del tour: sobre la pantalla real, con ejemplos en vivo ---- */
+    var PASOS = [
+        { sel: '.nav-tabs', t: 'Las cuatro vistas', h: 'Aquí navegas el CRM: <b>Dashboard</b> (KPIs y leads priorizados), <b>Pipeline</b> (tablero por etapa), <b>Agenda</b> (próximas acciones) y <b>Auditoría</b> (historial de cambios).' },
+        { sel: '#kpi-grid', t: 'Los números del negocio', h: 'Pipeline activo, <b>valor ponderado</b> (valor × probabilidad), win rate y las acciones de hoy. La tarjeta ámbar avisa cuántos leads aún <b>no tienen cotización de competencia</b>.' },
+        { sel: '#leads-table', t: 'Leads priorizados', h: 'La tabla completa de leads. <b>★ marca los 5 prioritarios</b> por valor ponderado, y la alerta ámbar recuerda pedir la cotización de la competencia antes de emitir la tuya.' },
+        { sel: '.modal-card', t: 'Ejemplo real: la ficha del lead', h: 'Abrí la ficha de <b>LEAD-001</b> para que la veas. El <b>área (ha)</b> sugiere el modelo automáticamente (≤30 T25P · ≤80 T55 · ≤200 T70P · más T100) y la <b>próxima acción con fecha es obligatoria</b>.',
+          prep: function () { window.openEditLead(state.leads[0].id); }, exit: function () { window.closeModal(); } },
+        { sel: '.icon-btn.ai', t: 'Ejemplo interactivo: botón ✨ IA', h: '<b>Recién lo presioné por ti</b>: los datos de LEAD-001 más un prompt quedaron copiados en tu portapapeles. Pégalo en cualquier IA (ChatGPT, Claude…), agrega lo nuevo de tu llamada, y la IA te devuelve un JSON actualizado.',
+          prep: function () { try { window.copyLeadAI(state.leads[0].id); } catch (e) {} } },
+        { sel: '.modal-card', t: 'Pegar la respuesta de la IA', h: 'Este es el importador <b>JSON</b> (botón verde del encabezado). Pegas la respuesta de la IA → <b>Importar</b>, y la ficha se actualiza <b>sin borrar ningún campo</b> (reconoce el lead por su id).',
+          prep: function () { window.openPasteJSON(); }, exit: function () { window.closeModal(); } },
+        { sel: '#kanban-board', t: 'El pipeline por etapas', h: 'Cambié a la vista <b>Pipeline</b>: cada columna es una etapa (Lead → Calificado → Cotizado → Negociando → Cierre). Haz clic en cualquier tarjeta para abrir su ficha.',
+          prep: function () { document.querySelector('.nav-tab[data-view="kanban"]').click(); } },
+        { sel: '#view-agenda', t: 'La agenda del día', h: 'Y esta es la <b>Agenda</b>: próximas acciones ordenadas por fecha, con atrasos (⚠) y lo de hoy (⏰). Revísala <b>cada mañana</b> — ningún lead queda sin próxima acción.',
+          prep: function () { document.querySelector('.nav-tab[data-view="agenda"]').click(); } },
+        { sel: null, t: 'Reglas de oro', h: '<b>1.</b> Todo lead con próxima acción y fecha. <b>2.</b> La fecha de aplicación del cliente manda la prioridad. <b>3.</b> Pide la cotización de la competencia. <b>4.</b> Si no está en el CRM, no pasó. <b>5.</b> Usa ✨ después de cada llamada.<br><br>Descarga el manual con capturas para tenerlo siempre a mano.',
+          prep: function () { document.querySelector('.nav-tab[data-view="dashboard"]').click(); }, final: true },
+    ];
+
+    var paso = 0, hole = null, tip = null;
+
+    function arma() {
+        hole = document.createElement('div'); hole.id = 'tour-hole';
+        tip = document.createElement('div'); tip.id = 'tour-tip';
+        document.body.appendChild(hole); document.body.appendChild(tip);
+    }
+
+    function coloca() {
+        var p = PASOS[paso];
+        var el = p.sel ? document.querySelector(p.sel) : null;
+        if (el) {
+            el.scrollIntoView({ block: 'center', behavior: 'auto' });
+            var r = el.getBoundingClientRect();
+            var pad = 8;
+            hole.style.display = '';
+            hole.style.left = (r.left - pad) + 'px';
+            hole.style.top = (r.top - pad) + 'px';
+            hole.style.width = (r.width + pad * 2) + 'px';
+            hole.style.height = (r.height + pad * 2) + 'px';
+        } else {
+            hole.style.display = '';
+            hole.style.left = '50%'; hole.style.top = '38%'; hole.style.width = '0px'; hole.style.height = '0px';
+        }
+        var dots = PASOS.map(function (_, i) { return '<i class="' + (i === paso ? 'on' : '') + '"></i>'; }).join('');
+        tip.innerHTML =
+            '<div class="t-head"><span class="t-tag">Recorrido · paso a paso</span><span class="t-prog">' + (paso + 1) + ' / ' + PASOS.length + '</span></div>' +
+            '<h3>' + p.t + '</h3><div class="t-body">' + p.h + '</div>' +
+            '<div class="t-nav"><span class="t-dots">' + dots + '</span>' +
+            (paso > 0 ? '<button type="button" class="t-btn ghost" id="t-back">← Atrás</button>' : '') +
+            (p.final ? '<a class="t-btn gold" href="./manual-crm-nase.pdf" download="Manual-CRM-NASE-Agrotech.pdf">⭳ Manual (PDF)</a>' : '') +
+            '<button type="button" class="t-btn" id="t-next">' + (p.final ? 'Terminar e ingresar →' : 'Siguiente →') + '</button></div>';
+        var tr = tip.getBoundingClientRect();
+        var x, y;
+        if (el) {
+            var r2 = el.getBoundingClientRect();
+            x = Math.min(Math.max(12, r2.left), window.innerWidth - tr.width - 12);
+            y = r2.bottom + 16;
+            if (y + tr.height > window.innerHeight - 12) y = r2.top - tr.height - 16;
+            if (y < 12) y = Math.max(12, (window.innerHeight - tr.height) / 2);
+        } else {
+            x = (window.innerWidth - tr.width) / 2;
+            y = (window.innerHeight - tr.height) / 2;
+        }
+        tip.style.left = x + 'px'; tip.style.top = y + 'px';
+        var back = document.getElementById('t-back');
+        if (back) back.addEventListener('click', function () { mueve(-1); });
+        document.getElementById('t-next').addEventListener('click', function () {
+            if (PASOS[paso].final) { termina(); } else { mueve(1); }
+        });
+    }
+
+    function mueve(dir) {
+        var actual = PASOS[paso];
+        if (actual.exit) { try { actual.exit(); } catch (e) {} }
+        paso = Math.max(0, Math.min(PASOS.length - 1, paso + dir));
+        var p = PASOS[paso];
+        if (p.prep) { try { p.prep(); } catch (e) {} }
+        setTimeout(coloca, p.prep ? 220 : 30);
+    }
+
+    function termina() {
+        var actual = PASOS[paso];
+        if (actual.exit) { try { actual.exit(); } catch (e) {} }
+        sessionStorage.setItem(KEY, '1');
+        hole.remove(); tip.remove();
+    }
+
+    window.addEventListener('resize', function () { if (tip && document.body.contains(tip)) coloca(); });
+
+    document.getElementById('gate-enter').addEventListener('click', function () {
+        gate.remove();
+        arma();
+        setTimeout(coloca, 120);
+    });
+})();
+</script>
+
+</body>
+</html>
