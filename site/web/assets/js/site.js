@@ -360,7 +360,20 @@
       var k = claveEstable(el);
       if (t[k] != null && libre(el)) el.innerHTML = t[k];
     });
+    normalizaSaltos();
   };
+
+  /* El hero de las páginas de modelo va con separación de una sola línea
+     entre párrafos. El texto publicado del T100 trae dobles saltos, así que
+     se colapsan aquí, después de aplicar los textos guardados. No toca el
+     resto del sitio: en el inicio la separación doble es intencional. */
+  function normalizaSaltos() {
+    var tg = document.querySelector(".model-hero .tagline");
+    if (!tg) return;
+    var html = tg.innerHTML;
+    var limpio = html.replace(/(?:\s*<br\s*\/?>\s*){2,}/gi, "<br>");
+    if (limpio !== html) tg.innerHTML = limpio;
+  }
 
   function hexLum(h) {
     var m = /^#?([0-9a-f]{6})$/i.exec(h || "");
