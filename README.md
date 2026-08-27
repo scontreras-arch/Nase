@@ -3,7 +3,8 @@
 Sitio web y material de diseño de NASE Agrotech — venta de drones agrícolas
 DJI Agras y repuestos en la Región del Maule, Chile.
 
-Sitio en producción: https://curly-feather-8a3c.contreras-sma.workers.dev/
+Sitio en producción: https://naseagrotech.cl
+(origen: Worker `curly-feather-8a3c`)
 
 ## Qué contiene este repositorio
 
@@ -110,3 +111,29 @@ deploy revirtió el valor por error. El incidente se corrigió el mismo día
 (deploy `a46d85c6`) y el valor quedó documentado en
 `site/worker/wrangler.toml`. Antes de desplegar, contrastar la configuración
 con la del Worker en producción, no con este README.
+
+## Dominio y DNS
+
+`naseagrotech.cl` está registrado en NIC.cl y delegado a Cloudflare
+(`bryce.ns.cloudflare.com`, `nadia.ns.cloudflare.com`, 26-08-2026). La zona
+se creó importando los 29 registros que servía HostGator, de modo que el
+correo y los servicios de cPanel siguieron funcionando durante el cambio.
+
+El sitio se sirve mediante **rutas de Worker**, no mediante Custom Domain:
+
+| Ruta | Worker |
+| --- | --- |
+| `naseagrotech.cl/*` | `curly-feather-8a3c` |
+| `www.naseagrotech.cl/*` | `curly-feather-8a3c` |
+
+Se eligió esa vía porque un Custom Domain exige borrar antes los registros A
+del ápice y de `www`, y esos registros son los que mantienen el proxy de
+Cloudflare activo sobre la zona. Con rutas, el Worker intercepta la petición
+antes de llegar al origen y no hay que tocar el DNS heredado.
+
+**El correo no pasa por el Worker.** Vive en Titan (`mx1.titan.email`,
+`mx2.titan.email`, SPF `include:spf.titan.email`) y los subdominios de cPanel
+—`mail`, `webmail`, `cpanel`, `ftp`, `autodiscover`— apuntan directo a
+`69.6.225.245` en modo *DNS only* (nube gris). Si alguno se pone en naranja,
+los puertos de cPanel (2078-2096) dejan de responder. No dar de baja el plan
+de HostGator mientras el correo siga alojado ahí.
