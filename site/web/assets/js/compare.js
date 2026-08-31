@@ -11,14 +11,14 @@
 
   /* Solo datos verificados; lo no confirmado va como "—" o "Por cotización" */
   var ROWS = [
-    { l: "Pulverización", best: ["t100"], v: { t25p: "25 L", t55: "50 L", t70p: "70 L", t100: "100 L" } },
-    { l: "Caudal máximo", v: { t25p: "—", t55: "40 L/min", t70p: "Doble atomización", t100: "30–40 L/min" } },
-    { l: "Esparcido", best: ["t100"], v: { t25p: "35 kg", t55: "55 kg · tolva 80 L", t70p: "Alta tasa · tornillo sin fin", t100: "150 L · hasta 400 kg/min" } },
-    { l: "Izaje de carga", best: ["t100"], v: { t25p: "—", t55: "40 kg", t70p: "Con cabrestante", t100: "100 kg" } },
+    { l: "Pulverización", best: ["t100"], v: { t25p: "20 L", t55: "50 L", t70p: "70 L", t100: "100 L" } },
+    { l: "Caudal máximo", v: { t25p: "24 L/min", t55: "50 L/min", t70p: "40 L/min", t100: "40 L/min" } },
+    { l: "Esparcido", best: ["t100"], v: { t25p: "25 kg", t55: "55 kg", t70p: "70 kg", t100: "100 kg" } },
+    { l: "Izaje de carga", best: ["t100"], v: { t25p: "—", t55: "40 kg", t70p: "65 kg", t100: "100 kg" } },
     { l: "Posicionamiento", v: { t25p: "RTK ±10 cm", t55: "RTK ±10 cm", t70p: "RTK ±10 cm", t100: "RTK ±10 cm" } },
-    { l: "Batería y carga", v: { t25p: "—", t55: "DB1050 · carga 9 min", t70p: "Carga rápida en terreno", t100: "DB2160 41 Ah · 8–9 min" } },
-    { l: "Formato", v: { t25p: "Plegable · 1 operador", t55: "Plegable · visión nocturna", t70p: "4 faenas en un equipo", t100: "Hélices 62″ · MTOW 177 kg" } },
-    { l: "Área recomendada / jornada", v: { t25p: "≤ 30 ha", t55: "30–80 ha", t70p: "80–200 ha", t100: "Sobre 200 ha" } },
+    { l: "Batería y carga", v: { t25p: "DB800", t55: "DB1050 / DB1580", t70p: "DB2160", t100: "DB2160" } },
+    { l: "Formato", v: { t25p: "Plegable", t55: "Plegable", t70p: "Plegable", t100: "Modular" } },
+    { l: "Área recomendada / jornada", v: { t25p: "20 a 30 ha", t55: "50 ha", t70p: "100 ha", t100: "150 ha" } },
     { l: "Precio", v: { t25p: "Por cotización", t55: "Por cotización", t70p: "Por cotización", t100: "Por cotización" } },
   ];
 
