@@ -16,3 +16,11 @@ Thumbs.db
 *.swp
 .idea/
 .vscode/
+
+# Migración a HostGator: artefactos generados y datos reales
+site/hostgator/api/config.php
+site/hostgator/dist/
+site/hostgator/nase-public_html-*.zip
+site/hostgator/migracion/export-d1/
+# Volcado de D1 con datos reales (incluye nombres y teléfonos de pedidos)
+site/hostgator/sql/03-datos.sql

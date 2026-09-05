@@ -21,6 +21,12 @@ site/
 │   ├── src/index.js         Código del Worker recuperado desde Cloudflare
 │   ├── wrangler.toml        Reconstruido (verificar antes del primer deploy)
 │   └── config-publicada-*.json   Config publicada en D1 (antes/después del 20-08)
+├── hostgator/               ★ Migración a HostGator (PHP 8 + MySQL)
+│   ├── api/                 La API portada desde el Worker
+│   ├── sql/                 Esquema MySQL y textos publicados
+│   ├── migracion/           Exportar D1 y convertirlo a MySQL
+│   ├── pruebas/             62 comprobaciones sobre la API portada
+│   └── empaquetar.sh        Arma el ZIP que se sube a public_html
 ├── NASE Agrotech.dc.html    Página del sitio (export de design canvas, 24-07-2026)
 ├── image-slot.js            Componente de slots de imagen
 ├── support.js               Utilidades de la página
@@ -66,11 +72,33 @@ de inventario y aprobación de pedidos. El `wrangler.toml` incluido es una
 reconstrucción (el original no estaba respaldado): revisar `compatibility_date`
 y bindings antes del primer deploy desde el repo.
 
-### El sitio y la API están desconectados
+### Migración a HostGator en preparación
 
-Ninguna de las dos versiones del HTML — ni la local ni la desplegada — hace
-`fetch` a `/api/`. El catálogo del sitio es estático y la API construida no se
-consume desde el frontend.
+Todo el material para salir de Cloudflare está en `site/hostgator/`: la API
+portada a PHP 8 + MySQL, el esquema equivalente a D1, las herramientas para
+exportar los datos y el paquete que se sube a `public_html`. El procedimiento
+paso a paso —incluida la parte delicada, que es mover el DNS sin cortar el
+correo `@naseagrotech.cl`— está en
+[`docs/migracion-hostgator.md`](docs/migracion-hostgator.md).
+
+Mientras no se cambie el DNS, producción sigue siendo el Worker de Cloudflare.
+
+### El sitio sí consume la API
+
+Corrige lo que decía este README hasta el 05-09-2026 («el sitio y la API están
+desconectados»): el frontend respaldado en `site/web/` llama a la API en cada
+visita, algo que hay que tener presente en cualquier cambio de hosting.
+
+| Archivo | Llamada | Para qué |
+|---|---|---|
+| `assets/js/site.js` | `GET /api/config` | Textos publicados desde el editor (correcciones C1–C13) |
+| `assets/js/site.js` | `GET /api/imagenes` | Imágenes reemplazadas desde el panel |
+| `assets/js/shop.js`, `part-page.js` | `GET /api/vitrina` | Catálogo de repuestos y ficha |
+| `assets/js/cart.js` | `POST /api/pedidos` | Deja el pedido del carrito como pendiente |
+| `admin/`, `bodega/` | toda la API | Inventario, ventas, pedidos y conteos |
+
+Lo que sí es estático es el respaldo de datos del catálogo: `assets/js/data.js`
+actúa de reserva cuando `/api/vitrina` no responde.
 
 ### Datos cargados
 

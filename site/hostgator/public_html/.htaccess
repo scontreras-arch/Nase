@@ -1,0 +1,98 @@
+# NASE Agrotech — reglas de Apache para el hosting de HostGator.
+#
+# Reemplaza lo que antes hacía el Worker de Cloudflare: servir los archivos
+# estáticos y enviar todo /api/* al código de la API.
+#
+# Va en la raíz de public_html. No usar directivas php_value/php_flag aquí:
+# con PHP-FPM (lo habitual en cPanel) provocan un error 500.
+
+Options -Indexes
+AddDefaultCharset utf-8
+DirectoryIndex index.html index.php
+
+# --------------------------------------------------------------------------
+# Rutas
+# --------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1) Con PHP en CGI/FastCGI la cabecera Authorization no llega sola; sin esto
+  #    el panel de /admin y el de /bodega recibirían siempre «No autorizado».
+  RewriteCond %{HTTP:Authorization} .
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+  # 2) HTTPS obligatorio.
+  #    DESCOMENTAR estas tres líneas SOLO cuando AutoSSL ya haya emitido el
+  #    certificado del dominio (cPanel → SSL/TLS Status). Si se activa antes,
+  #    el navegador no podrá abrir el sitio.
+  # RewriteCond %{HTTPS} !=on
+  # RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 3) Toda la API a un único archivo PHP, igual que el Worker resolvía /api/*
+  #    dentro de su función fetch().
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^api(/.*)?$ api/index.php [QSA,L]
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Archivos que no se sirven nunca
+# --------------------------------------------------------------------------
+<FilesMatch "^(config\.php|\.env.*|.*\.sql|.*\.log)$">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# --------------------------------------------------------------------------
+# Tipos y compresión
+# --------------------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType image/svg+xml .svg
+  AddType text/css .css
+  AddType application/javascript .js
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml \
+    application/javascript application/json image/svg+xml application/manifest+json
+</IfModule>
+
+# --------------------------------------------------------------------------
+# Caché del navegador
+#
+# El HTML no se cachea: los textos del sitio se publican desde el panel y deben
+# verse en cuanto se guardan. Las imágenes y el JS/CSS sí, porque cambian solo
+# con un despliegue.
+# --------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                          "access plus 1 hour"
+  ExpiresByType text/html                 "access plus 0 seconds"
+  ExpiresByType text/css                  "access plus 7 days"
+  ExpiresByType application/javascript    "access plus 7 days"
+  ExpiresByType image/png                 "access plus 30 days"
+  ExpiresByType image/jpeg                "access plus 30 days"
+  ExpiresByType image/svg+xml             "access plus 30 days"
+  ExpiresByType application/pdf           "access plus 30 days"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Las respuestas de la API nunca se guardan en caché. `ExpiresActive Off` es
+# necesario: si no, mod_expires añade su propio Cache-Control y la respuesta
+# viaja con dos cabeceras que se contradicen.
+<FilesMatch "index\.php$">
+  <IfModule mod_expires.c>
+    ExpiresActive Off
+  </IfModule>
+  <IfModule mod_headers.c>
+    Header always set Cache-Control "no-store"
+  </IfModule>
+</FilesMatch>
